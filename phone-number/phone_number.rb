@@ -1,5 +1,4 @@
 class PhoneNumber
-
   def initialize(string)
     @number = valid?(string) ? convert_to_number(string) : '0000000000'
   end
@@ -16,12 +15,8 @@ class PhoneNumber
   end
 
   def number
-    if @number.length > 10
-      @number[0] = ''
-      @number
-    else
-      @number
-    end
+    @number[0] = '' if @number.length > 10
+    @number
   end
 
   private
