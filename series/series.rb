@@ -5,10 +5,6 @@ class Series
 
   def slices(n)
     raise ArgumentError if n > @number.length
-
-    @number.each_index.map do |index|
-      last_index = index + n-1
-      @number[index..last_index] if last_index < @number.length
-    end.compact
+    @number.each_cons(n).to_a
   end
 end
