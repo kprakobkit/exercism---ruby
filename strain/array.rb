@@ -1,13 +1,9 @@
 class Array
   def keep &block
-    result = []
-    each { |element| result << element if yield element }
-    result
+    map { |element| element if yield element }.compact
   end
 
   def discard &block
-    result = []
-    each { |element| result << element unless yield element }
-    result
+    map { |element| element unless yield element }.compact
   end
 end
