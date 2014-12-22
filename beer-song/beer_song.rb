@@ -18,9 +18,7 @@ class BeerSong
   end
 
   def verses(last,first)
-    (first..last).to_a.reverse.map do |n|
-      verse(n)
-    end.join("\n") + "\n"
+    (first..last).to_a.reverse.map { |n| verse(n) }.join("\n") + "\n"
   end
 
   def sing
