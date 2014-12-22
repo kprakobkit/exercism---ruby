@@ -1,12 +1,12 @@
 class Anagram
   def initialize(word)
     @word = word
+    @word_chars = word.downcase.chars.sort
   end
 
   def match(words)
     words.select do |word|
-      next if @word == word.downcase
-      @word.downcase.chars.to_a.sort == word.downcase.chars.to_a.sort
+      @word_chars == word.downcase.chars.sort unless @word == word.downcase
     end
   end
 end
