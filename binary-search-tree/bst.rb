@@ -27,17 +27,9 @@ class Bst
 
   def insert(data, current_node = @root)
     if data <= current_node.data
-      if current_node.left
-        insert(data, current_node.left)
-      else
-        current_node.left = Node.new(data)
-      end
+      current_node.left ? insert(data, current_node.left) : current_node.left = Node.new(data)
     else
-      if current_node.right
-        insert(data, current_node.right)
-      else
-        current_node.right = Node.new(data)
-      end
+      current_node.right ? insert(data, current_node.right) : current_node.right = Node.new(data)
     end
   end
 
