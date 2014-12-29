@@ -31,7 +31,4 @@ class Clock
   def ==(other_clock)
     other_clock.total_minutes == @total_minutes
   end
-
-  private
-
 end
