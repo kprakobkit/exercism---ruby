@@ -8,8 +8,8 @@ class Nucleotide
     @strand = strand.chars
   end
 
-  def count(nucleotide)
-    @strand.count { |base| base == nucleotide }
+  def count(target)
+    @strand.count { |nucleotide| target == nucleotide }
   end
 
   def histogram
