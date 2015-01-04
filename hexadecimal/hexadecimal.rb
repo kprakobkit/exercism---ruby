@@ -26,6 +26,7 @@ class Hexadecimal
 
   def to_decimal
     return 0 unless valid?
+
     decimal = 0
     split_and_reverse.each_with_index do |number, index|
       decimal += @@decimal_conversion[number].to_i * (16 ** index)
